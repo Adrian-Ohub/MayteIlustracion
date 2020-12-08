@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Birds from "vanta/dist/vanta.birds.min";
+import Waves from "vanta/dist/vanta.waves.min";
 import * as THREE from "three";
 
 const WelcomeScreen = ({ children }) => {
@@ -11,7 +11,7 @@ const WelcomeScreen = ({ children }) => {
   useEffect(() => {
     if (!vanta) {
       setVanta(
-        Birds({
+        Waves({
           THREE,
           el: myRefDiv.current,
           mouseControls: true,
@@ -21,10 +21,11 @@ const WelcomeScreen = ({ children }) => {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          backgroundColor: 0x4db6ac,
-          color1: 0x0,
-          color2: 0xffd196,
-          colorMode: "variance",
+          color: "#4f5b62",
+          shininess: 10.0,
+          waveHeight: 3.5,
+          waveSpeed: 0.5,
+          zoom: 0.8,
         })
       );
       console.log("Establece vanta");

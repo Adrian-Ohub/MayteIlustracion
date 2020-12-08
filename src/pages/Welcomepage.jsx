@@ -1,9 +1,8 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
 import WelcomeScreen from "./../components/Welcomescreen";
-import { Grid, makeStyles, Link } from "@material-ui/core";
+import { Grid, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
-import Header from "../components/Footer";
 
 const WelcomePage = () => {
   return (
@@ -17,7 +16,7 @@ const WelcomePage = () => {
           spacing={1}
         >
           <div className="logo">
-            <Typography variant="h7" color="initial">
+            <Typography variant="h3" color="initial">
               MAV
             </Typography>
           </div>
@@ -45,7 +44,6 @@ const WelcomePage = () => {
             </Grid>
           </div>
         </Grid>
-        <Header></Header>
       </WelcomeScreen>
     </div>
   );

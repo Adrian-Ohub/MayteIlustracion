@@ -1,53 +1,24 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import tileData from "./tileData";
+import PropTypes from "prop-types";
+import AppFrame from "../components/AppFrame/AppFrame";
+import { makeStyles, Grid } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    width: 500,
-    height: 450,
-  },
-}));
+/* const useStyles = makeStyles((theme) => ({})); */
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *     cols: 2,
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-export default function ImageGridList() {
-  const classes = useStyles();
-
+const Ilustracionpage = (props) => {
+  /*   const classes = makeStyles(); */
   return (
-    <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {tileData.map((tile) => (
-          <GridListTile key={tile.img} cols={tile.cols || 1}>
-            <img src={tile.img} alt={tile.title} />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+    <AppFrame>
+      <Grid container item xs={12}>
+        <h2>HOLA</h2>
+        <Grid item xs={6}>
+          <h3>caracola</h3>
+        </Grid>
+      </Grid>
+    </AppFrame>
   );
-}
+};
+
+Ilustracionpage.propTypes = {};
+
+export default Ilustracionpage;
