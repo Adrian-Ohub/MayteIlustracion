@@ -1,10 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+import AppFrame from "../components/AppFrame";
 
-const Contactopage = (props) => {
-  return <div></div>;
+const Contactopage = () => {
+  return <AppFrame></AppFrame>;
 };
-
-Contactopage.propTypes = {};
 
 export default Contactopage;

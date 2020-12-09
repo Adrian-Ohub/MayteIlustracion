@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AppFrame from "../../components/AppFrame/AppFrame";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
-import GalleryCuento from "../../components/GalleryImgs/GalleryIlustracion/GalleryCuento/GalleryCuento";
+import GalleryInvitacion from "../../components/GalleryImgs/GalleryDiseño/GalleryInvitacion/GalleryInvitacion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
 }));
-const IlustracionCuentopage = () => {
+const DiseñoInvitacionpage = () => {
   const classes = useStyles();
 
   const [img, setImg] = useState("");
@@ -43,7 +43,7 @@ const IlustracionCuentopage = () => {
             </Typography>
           </Grid>
           <Grid item xs={4}>
-            <GalleryCuento onClick={onClickHandler}></GalleryCuento>
+            <GalleryInvitacion onClick={onClickHandler}></GalleryInvitacion>
           </Grid>
           <Grid item xs={8}>
             <img src={img} alt={imgTitle} className={classes.img} />
@@ -54,4 +54,4 @@ const IlustracionCuentopage = () => {
   );
 };
 
-export default IlustracionCuentopage;
+export default DiseñoInvitacionpage;

@@ -8,6 +8,7 @@ import ContactoPage from "./pages/Contactopage";
 import IlustracionCuentoPage from "./pages/Ilustracionpages/IlustracionCuentopage";
 import IlustracionLetteringPage from "./pages/Ilustracionpages/IlustracionLetteringpage";
 import IlustracionGuerrerasPage from "./pages/Ilustracionpages/IlustracionGuerreraspage";
+import DiseñoInvitacionPage from "./pages/Diseñopages/DiseñoInvitacionpage";
 
 const App = () => {
   return (
@@ -36,6 +37,10 @@ const App = () => {
 
           <Route path="/ilustracion">
             <IlustracionPage></IlustracionPage>
+          </Route>
+
+          <Route path="/diseño/invitacion">
+            <DiseñoInvitacionPage></DiseñoInvitacionPage>
           </Route>
 
           <Route path="/diseño">

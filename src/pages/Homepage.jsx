@@ -15,28 +15,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Homepage = () => {
+  /* //funcion de filtro
   const [keywordList, setKeywordList] = useState("");
   const myCallBack = (value) => {
     setKeywordList(value);
-  };
+  }; */
 
   const classes = useStyles();
-  console.log("keylist:", keywordList);
+
   return (
-    <AppFrame keyword={myCallBack}>
-      <Grid
-        container
-        item
-        /* direction="" */ className={classes.root}
-        spacing={2}
-      >
+    <AppFrame /* keyword={myCallBack} */>
+      <Grid container item className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h2" color="inherit">
             Bienvenidos
           </Typography>
         </Grid>
         <Grid item xs={8}>
-          <GalleryImgs keyword={keywordList}></GalleryImgs>
+          <GalleryImgs /* keyword={keywordList} */></GalleryImgs>
         </Grid>
       </Grid>
     </AppFrame>
