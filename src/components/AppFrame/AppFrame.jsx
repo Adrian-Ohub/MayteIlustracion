@@ -36,8 +36,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   img: {
-    /* objectFit: "contain",
-    width: "100%", */
     maxWidth: "100%",
     maxHeight: "100%",
     display: "block",
@@ -52,11 +50,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppFrame = ({ children, keyword }) => {
+  /* //funcion para filtrar
   const myCallBack = (category) => {
     keyword(category);
-  };
+  }; */
   const classes = useStyles();
-  console.log("category en AppFrame:");
+
   return (
     //Grid container sive para generar un contenedor y disponer los elementos (items)
     <div className={classes.root}>
@@ -69,32 +68,23 @@ const AppFrame = ({ children, keyword }) => {
             <div className={classes.menu}>
               <MenuItem
                 component={LinkRouter}
-                onClick={() => myCallBack("ilustracion")}
+                //ejecucion de la funcion de filtro ejemplo
+                /* onClick={() => myCallBack("ilustracion")} */
                 to="/ilustracion"
                 color="inherit"
               >
                 <Typography variant="body2">Ilustracion</Typography>
               </MenuItem>
-              <MenuItem
-                component={LinkRouter}
-                onClick={() => myCallBack("diseño")}
-                to="/home#diseño"
-                color="inherit"
-              >
+              <MenuItem component={LinkRouter} to="/diseño" color="inherit">
                 <Typography variant="body2">Diseño</Typography>
               </MenuItem>
-              {/* <MenuItem component={LinkRouter} to="/contacto" color="inherit">
+              <MenuItem component={LinkRouter} to="/contacto" color="inherit">
                 <Typography variant="body2">Contacto</Typography>
-              </MenuItem> */}
+              </MenuItem>
             </div>
           </div>
           <div className={classes.divRight}>
-            <MenuItem
-              component={LinkRouter}
-              onClick={() => myCallBack("")}
-              to="/home"
-              color="inherit"
-            >
+            <MenuItem component={LinkRouter} to="/home" color="inherit">
               <Typography variant="h3">MAV</Typography>
             </MenuItem>
           </div>
