@@ -43,7 +43,10 @@ const IlustracionCuentopage = () => {
             </Typography>
           </Grid>
           <Grid item xs={4}>
-            <GalleryCuento onClick={onClickHandler}></GalleryCuento>
+            <GalleryCuento
+              onClick={onClickHandler}
+              proyect={"cuento"}
+            ></GalleryCuento>
           </Grid>
           <Grid item xs={8}>
             <img src={img} alt={imgTitle} className={classes.img} />

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WelcomePage from "./pages/Welcomepage";
-import HomePage from "./pages/Homepage";
+import Sectionpage from "./pages/Sectionpage";
 import IlustracionPage from "./pages/Ilustracionpage";
 import DiseñoPage from "./pages/Diseñopage";
 import ContactoPage from "./pages/Contactopage";
@@ -20,7 +20,7 @@ const App = () => {
           </Route>
 
           <Route path="/home">
-            <HomePage></HomePage>
+            <Sectionpage category=""></Sectionpage>
           </Route>
 
           <Route path="/ilustracion/cuento">
@@ -36,7 +36,7 @@ const App = () => {
           </Route>
 
           <Route path="/ilustracion">
-            <IlustracionPage></IlustracionPage>
+            <Sectionpage category="Ilustracion"></Sectionpage>
           </Route>
 
           <Route path="/diseño/invitacion">
@@ -44,7 +44,7 @@ const App = () => {
           </Route>
 
           <Route path="/diseño">
-            <DiseñoPage></DiseñoPage>
+            <Sectionpage category="Diseño"></Sectionpage>
           </Route>
 
           <Route path="/contacto">

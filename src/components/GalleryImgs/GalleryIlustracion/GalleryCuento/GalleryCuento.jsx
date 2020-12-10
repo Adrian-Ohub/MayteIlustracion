@@ -26,14 +26,15 @@ const GalleryCuento = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    setImages(_.map(getImages().data[0].ilustracion[0].cuento));
-  }, []);
+    const imgCuento = _.map(getImages().ilustracion, props.proyect);
+    setImages(_.map(imgCuento[0]));
+  }, [props.proyect]);
 
   const onClickHandler = (data) => {
     props.onClick(data);
     console.log(data);
   };
-
+  console.log(images);
   return (
     <GridList cellHeight={"auto"} cols={getGridListCols()}>
       {images.map((singleImage) => (

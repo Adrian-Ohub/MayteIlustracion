@@ -39,27 +39,34 @@ function GalleryImgs(props) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    const collectionIlustracion = _.map(getImages().data[0].ilustracion[0]);
-    const collectionDiseño = _.map(getImages().data[0].diseño[0]);
-
-    const arrayIlustracion = [];
-    _(collectionIlustracion).forEach((img) => {
-      arrayIlustracion.push(img[0]);
-    });
-
-    const arrayDiseño = [];
-    _(collectionDiseño).forEach((img) => {
-      arrayDiseño.push(img[0]);
-    });
-    if (props.keyword === "ilustracion") {
+    if (props.keyword === "Ilustracion") {
+      const collectionIlustracion = _.map(getImages().ilustracion[0]);
+      const arrayIlustracion = [];
+      _(collectionIlustracion).forEach((img) => {
+        arrayIlustracion.push(img[0]);
+      });
       setImages(arrayIlustracion);
-    } else if (props.keyword === "diseño") {
+    } else if (props.keyword === "Diseño") {
+      const collectionDiseño = _.map(getImages().diseño[0]);
+      const arrayDiseño = [];
+      _(collectionDiseño).forEach((img) => {
+        arrayDiseño.push(img[0]);
+      });
       setImages(arrayDiseño);
     } else {
+      const collectionIlustracion = _.map(getImages().ilustracion[0]);
+      const arrayIlustracion = [];
+      _(collectionIlustracion).forEach((img) => {
+        arrayIlustracion.push(img[0]);
+      });
+      const collectionDiseño = _.map(getImages().diseño[0]);
+      const arrayDiseño = [];
+      _(collectionDiseño).forEach((img) => {
+        arrayDiseño.push(img[0]);
+      });
       setImages(_.union(arrayIlustracion, arrayDiseño));
     }
   }, [props]);
-
   return (
     <GridList
       className={classes.gridlist}
