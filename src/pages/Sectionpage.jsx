@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppFrame from "../components/AppFrame/AppFrame";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import GalleryImgs from "../components/GalleryImgs";
+import GallerySection from "../components/GallerySection";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Homepage = (props) => {
+const Sectionpage = (props) => {
   const [title, setTitle] = useState("");
   useEffect(() => {
     if (props.category === "") {
@@ -25,7 +25,6 @@ const Homepage = (props) => {
   }, [props.category]);
 
   const classes = useStyles();
-  console.log("category en homepage", props);
 
   return (
     <AppFrame>
@@ -36,11 +35,11 @@ const Homepage = (props) => {
           </Typography>
         </Grid>
         <Grid item xs={8}>
-          <GalleryImgs keyword={props.category}></GalleryImgs>
+          <GallerySection category={props.category}></GallerySection>
         </Grid>
       </Grid>
     </AppFrame>
   );
 };
 
-export default Homepage;
+export default Sectionpage;

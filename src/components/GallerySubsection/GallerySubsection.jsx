@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
-import getImages from "../../../../services/getImages/getImages";
-import Image from "../../../SingleImg";
+import GetImages from "../../services/GetImages";
+import Image from "../SingleImg";
 import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
-import _ from "lodash";
 
-const GalleryLettering = (props) => {
+const GalleryCuento = (props) => {
   const getGridListCols = () => {
     if (isWidthUp("xl", props.width)) {
       return 3;
@@ -25,14 +24,16 @@ const GalleryLettering = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    setImages(_.map(getImages().data[0].ilustracion[0].lettering));
-  }, []);
+    const array = GetImages({
+      category: props.category,
+      proyect: props.proyect,
+    });
+    setImages(array);
+  }, [props.category, props.proyect]);
 
-  const onClickHandler = (data) => {
-    props.onClick(data);
-    console.log(data);
+  const onClickHandler = (image) => {
+    props.onClick(image);
   };
-
   return (
     <GridList cellHeight={"auto"} cols={getGridListCols()}>
       {images.map((singleImage) => (
@@ -49,4 +50,4 @@ const GalleryLettering = (props) => {
   );
 };
 
-export default withWidth()(GalleryLettering);
+export default withWidth()(GalleryCuento);

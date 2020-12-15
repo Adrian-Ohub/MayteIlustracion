@@ -2,13 +2,8 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WelcomePage from "./pages/Welcomepage";
 import Sectionpage from "./pages/Sectionpage";
-import IlustracionPage from "./pages/Ilustracionpage";
-import DiseñoPage from "./pages/Diseñopage";
 import ContactoPage from "./pages/Contactopage";
-import IlustracionCuentoPage from "./pages/Ilustracionpages/IlustracionCuentopage";
-import IlustracionLetteringPage from "./pages/Ilustracionpages/IlustracionLetteringpage";
-import IlustracionGuerrerasPage from "./pages/Ilustracionpages/IlustracionGuerreraspage";
-import DiseñoInvitacionPage from "./pages/Diseñopages/DiseñoInvitacionpage";
+import SubsectionPage from "./pages/Subsectionpage";
 
 const App = () => {
   return (
@@ -24,27 +19,39 @@ const App = () => {
           </Route>
 
           <Route path="/ilustracion/cuento">
-            <IlustracionCuentoPage></IlustracionCuentoPage>
+            <SubsectionPage
+              category="ilustracion"
+              proyect="cuento"
+            ></SubsectionPage>
           </Route>
 
           <Route path="/ilustracion/lettering">
-            <IlustracionLetteringPage></IlustracionLetteringPage>
+            <SubsectionPage
+              category="ilustracion"
+              proyect="lettering"
+            ></SubsectionPage>
           </Route>
 
           <Route path="/ilustracion/guerreras">
-            <IlustracionGuerrerasPage></IlustracionGuerrerasPage>
+            <SubsectionPage
+              category="ilustracion"
+              proyect="guerreras"
+            ></SubsectionPage>
           </Route>
 
           <Route path="/ilustracion">
-            <Sectionpage category="Ilustracion"></Sectionpage>
+            <Sectionpage category="ilustracion"></Sectionpage>
           </Route>
 
           <Route path="/diseño/invitacion">
-            <DiseñoInvitacionPage></DiseñoInvitacionPage>
+            <SubsectionPage
+              category="diseño"
+              proyect="invitacion"
+            ></SubsectionPage>
           </Route>
 
           <Route path="/diseño">
-            <Sectionpage category="Diseño"></Sectionpage>
+            <Sectionpage category="diseño"></Sectionpage>
           </Route>
 
           <Route path="/contacto">

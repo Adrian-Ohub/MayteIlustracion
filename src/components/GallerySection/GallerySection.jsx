@@ -5,9 +5,9 @@ import {
   GridListTileBar,
   makeStyles,
 } from "@material-ui/core";
-import Image from "../../components/SingleImg";
+import Image from "../SingleImg";
 import { Link as LinkRouter } from "react-router-dom";
-import getImages from "../../services/getImages/getImages";
+import GetImages from "../../services/GetImages";
 import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 import _ from "lodash";
 
@@ -39,34 +39,24 @@ function GalleryImgs(props) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    if (props.keyword === "Ilustracion") {
-      const collectionIlustracion = _.map(getImages().ilustracion[0]);
-      const arrayIlustracion = [];
-      _(collectionIlustracion).forEach((img) => {
-        arrayIlustracion.push(img[0]);
+    if (props.category !== "") {
+      const collection = GetImages({
+        category: props.category,
       });
-      setImages(arrayIlustracion);
-    } else if (props.keyword === "Diseño") {
-      const collectionDiseño = _.map(getImages().diseño[0]);
-      const arrayDiseño = [];
-      _(collectionDiseño).forEach((img) => {
-        arrayDiseño.push(img[0]);
+      const arrayFirstItem = [];
+      _(collection).forEach((img) => {
+        arrayFirstItem.push(img[0]);
       });
-      setImages(arrayDiseño);
+      setImages(arrayFirstItem);
     } else {
-      const collectionIlustracion = _.map(getImages().ilustracion[0]);
-      const arrayIlustracion = [];
-      _(collectionIlustracion).forEach((img) => {
-        arrayIlustracion.push(img[0]);
+      const collection = GetImages({ category: "" });
+      const arrayFirstItem = [];
+      _(collection).forEach((img) => {
+        arrayFirstItem.push(img[0]);
       });
-      const collectionDiseño = _.map(getImages().diseño[0]);
-      const arrayDiseño = [];
-      _(collectionDiseño).forEach((img) => {
-        arrayDiseño.push(img[0]);
-      });
-      setImages(_.union(arrayIlustracion, arrayDiseño));
+      setImages(arrayFirstItem);
     }
-  }, [props]);
+  }, [props.category]);
   return (
     <GridList
       className={classes.gridlist}
@@ -78,6 +68,7 @@ function GalleryImgs(props) {
         <GridListTile
           key={singleImage.title}
           component={LinkRouter}
+          //singleImage.tag puede ser sustituido por props.category?
           to={`${singleImage.tag}/${singleImage.title}`}
         >
           <Image img={singleImage.img} title={singleImage.title} />

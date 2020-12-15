@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {
   Grid,
@@ -49,11 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppFrame = ({ children, keyword }) => {
-  /* //funcion para filtrar
-  const myCallBack = (category) => {
-    keyword(category);
-  }; */
+const AppFrame = ({ children }) => {
   const classes = useStyles();
 
   return (
@@ -68,8 +64,6 @@ const AppFrame = ({ children, keyword }) => {
             <div className={classes.menu}>
               <MenuItem
                 component={LinkRouter}
-                //ejecucion de la funcion de filtro ejemplo
-                /* onClick={() => myCallBack("ilustracion")} */
                 to="/ilustracion"
                 color="inherit"
               >
